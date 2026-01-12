@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="usersInputSection">
+      <div id="players_div">
+        <label for="player1">
+          Player 1 Name
+          <input type="text" id="player1" />
+        </label>
+
+        <label for="player2">
+          Player 2 Name
+          <input type="text" id="player2" />
+        </label>
+      </div>
+      <p id="error"></p>
+      <button id="startGameBtn">Start Game</button>
+    </div>
+
+    <div id="categoryInputSection">
+      <h2 id="countRound"></h2>
+      <div class="div_section">
+        <div id="player1NameDiv"></div>
+        <div id="player2NameDiv"></div>
+      </div>
+      <select name="categories" id="categories">
+        <option value="default" default>Choose a Category</option>
+        <option value="music">music</option>
+        <option value="sport_and_leisure">sport_and_leisure</option>
+        <option value="film_and_tv">film_and_tv</option>
+        <option value="arts_and_literature">arts_and_literature</option>
+        <option value="history">history</option>
+        <option value="society_and_culture">society_and_culture</option>
+        <option value="science">science</option>
+        <option value="geography">geography</option>
+        <option value="food_and_drink">food_and_drink</option>
+        <option value="general_knowledge">general_knowledge</option>
+      </select>
+      <p id="error1"></p>
+      <button id="startRoundBtn">Start Round</button>
+    </div>
+
+    <div id="displayQuestionSection">
+      <div id="questionSection">
+        <h2 id="roundNumber">Round :-</h2>
+        <h4 id="questionNumber">Question Number:-</h4>
+        <h4 id="questionCategory">Question Category:-</h4>
+        <h4 id="questionDifficulty">Question Difficulty:-</h4>
+        <h4 id="currentPlayerTurn">Current Turn:-</h4>
+        <h4 id="playersScore"></h4>
+        <p id="questionText">Question:-</p>
+      </div>
+
+      <div id="optionsDiv">
+        <input
+          type="radio"
+          name="option"
+          id="option1_value"
+          value="1"
+          class="radio_options"
+        />
+        <label for="option1" id="first_option_text"> first</label>
+
+        <input
+          type="radio"
+          name="option"
+          id="option2_value"
+          value="2"
+          class="radio_options"
+        />
+        <label for="option2" id="second_option_text">second</label>
+
+        <input
+          type="radio"
+          name="option"
+          id="option3_value"
+          value="3"
+          class="radio_options"
+        />
+        <label for="option3" id="third_option_text"> third</label>
+
+        <input
+          type="radio"
+          name="option"
+          id="option4_value"
+          value="4"
+          class="radio_options"
+        />
+        <label for="option4" id="fourth_option_text"> fourth</label>
+      </div>
+      <p id="error2"></p>
+      <div id="answerSection">
+        <h4 id="currentPlayerScore"></h4>
+      </div>
+      <div class="div_section">
+        <button id="nextQuestionBtn">Next</button>
+        <button id="nextRoundBtn">Next Round</button>
+        <button id="endGameBtn">End Game</button>
+      </div>
+    </div>
+
+    <div id="displayWinnersSection">
+      <div id="winnerDeclaredSection">
+        <h2>🎉 Game Over 🎉</h2>
+        <h4>Thanks for playing....😊</h4>
+        <p id="player1Status"></p>
+        <p id="player2Status"></p>
+        <p id="result"></p>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

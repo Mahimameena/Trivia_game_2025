@@ -1,0 +1,50 @@
+#usersInputSection, #categoryInputSection , #displayQuestionSection, #displayWinnersSection{
+    background-color:rgb(95, 181, 221);
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    margin: auto;
+}
+
+#players_div{
+    margin-top: 150px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#startGameBtn{
+    margin-left: 200px;
+}
+#error, #error1, #error2{
+    text-align: center;
+    margin: 20px; 
+}
+
+.div_section{
+    margin: 30px; 
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#categories{
+    display: flex;
+    margin: auto;
+}
+
+#startRoundBtn{
+     margin: 200px;
+}
+#countRound, #roundNumber{
+    text-align: center;
+}
+
+#winnerDeclaredSection{
+    margin: 150px;
+    text-align: center;
+}
+
+#questionSection, #optionsDiv, #currentPlayerScore{
+  margin: 20px;
+}
