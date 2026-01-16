@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="usersInputSection">
-      <div id="players_div">
+      <div class="players_section">
         <label for="player1">
           Player 1 Name
           <input type="text" id="player1" />
@@ -25,9 +25,9 @@
 
     <div id="categoryInputSection">
       <h2 id="countRound"></h2>
-      <div class="div_section">
-        <div id="player1NameDiv"></div>
-        <div id="player2NameDiv"></div>
+      <div class="players_section">
+        <h3 id="player1Value"></h3>
+        <h3 id="player2Value"></h3>
       </div>
       <select name="categories" id="categories">
         <option value="default" default>Choose a Category</option>
@@ -98,8 +98,11 @@
       <div id="answerSection">
         <h4 id="currentPlayerScore"></h4>
       </div>
-      <div class="div_section">
         <button id="nextQuestionBtn">Next</button>
+    </div>
+
+    <div id="roundSummary">
+      <div id="btns_section">
         <button id="nextRoundBtn">Next Round</button>
         <button id="endGameBtn">End Game</button>
       </div>
