@@ -4,6 +4,7 @@ let displayQuestionSection = document.getElementById("displayQuestionSection");
 let roundSummary = document.getElementById("roundSummary");
 let displayWinnersSection = document.getElementById("displayWinnersSection");
 
+let categories = document.getElementById("categories");
 let radio_options = document.getElementsByClassName("radio_options");
 let questionSection=document.getElementById("questionSection");
 let optionsDiv=document.getElementById("optionsDiv");
@@ -73,7 +74,6 @@ startGameBtn.addEventListener("click", function () {
 
 let startRoundBtn = document.getElementById("startRoundBtn");
 startRoundBtn.addEventListener("click", function () {
-  let categories = document.getElementById("categories");
   let error1 = document.getElementById("error1");
   if (categories.value === "default") {
     error1.innerText = "Please select any category";
@@ -188,16 +188,13 @@ function showAnswer(selectedOption) {
       let current_score2 = score;
       currentPlayerScore.innerText = `${player2Name}:- Got ${current_score2}`;
     }
-    updatePlayersScore();
+     playersScore.innerText = `${player1Name} :- ${player1_score}    ${player2Name} :- ${player2_score}`;
 
   } else {
     error2.innerText = `❌ Wrong Answer! Correct answer is: ${currentQuestion.correctAnswer}`;
   }
 
   nextQuestionBtn.disabled = false;
-}
-function updatePlayersScore() {
-  playersScore.innerText = `${player1Name} :- ${player1_score}    ${player2Name} :- ${player2_score}`;
 }
 
 nextQuestionBtn.addEventListener("click", function () {
