@@ -6,8 +6,8 @@ let displayWinnersSection = document.getElementById("displayWinnersSection");
 
 let radio_options = document.getElementsByClassName("radio_options");
 let questionSection=document.getElementById("questionSection");
-let error2 = document.getElementById("error2");
 let optionsDiv=document.getElementById("optionsDiv");
+let error2 = document.getElementById("error2");
 let currentPlayerScore = document.getElementById("currentPlayerScore");
 let playersScore=document.getElementById("playersScore");
 let nextQuestionBtn = document.getElementById("nextQuestionBtn");
@@ -85,10 +85,10 @@ startRoundBtn.addEventListener("click", function () {
     currentTurn = player1Name;
     categoryInputSection.style.display = "none";
     displayQuestionSection.style.display = "block";
-     error2.innerText = "Loading....."
     fetchingQuestions();
-     optionsDiv.style.display="none";
-     questionSection.style.display="none";
+    optionsDiv.style.display="none";
+    questionSection.style.display="none";
+    error2.innerText = "Loading....."
   }
 });
 
