@@ -6,8 +6,10 @@ let displayWinnersSection = document.getElementById("displayWinnersSection");
 
 let radio_options = document.getElementsByClassName("radio_options");
 let questionSection=document.getElementById("questionSection");
-let optionsDiv=document.getElementById("optionsDiv");
 let error2 = document.getElementById("error2");
+let optionsDiv=document.getElementById("optionsDiv");
+let currentPlayerScore = document.getElementById("currentPlayerScore");
+let playersScore=document.getElementById("playersScore");
 let nextQuestionBtn = document.getElementById("nextQuestionBtn");
 
 categoryInputSection.style.display = "none";
@@ -123,7 +125,6 @@ function showQuestion() {
   let questionCategory = document.getElementById("questionCategory");
   let questionDifficulty = document.getElementById("questionDifficulty");
   let currentPlayerTurn = document.getElementById("currentPlayerTurn");
-  let playersScore = document.getElementById("playersScore");
   let questionText = document.getElementById("questionText");
 
   let question = allQuestions[index];
@@ -157,9 +158,9 @@ function showQuestion() {
   }
 }
 
-for (i = 0; i < radio_options.length; i++) {
+for (let i = 0; i < radio_options.length; i++) {
   radio_options[i].addEventListener("change", function () {
-    for (j = 0; j < radio_options.length; j++) {
+    for (let j = 0; j < radio_options.length; j++) {
       radio_options[j].disabled = true;
     }
     showAnswer(this.value);
@@ -167,8 +168,6 @@ for (i = 0; i < radio_options.length; i++) {
 }
 
 function showAnswer(selectedOption) {
-  let error2 = document.getElementById("error2");
-  let currentPlayerScore = document.getElementById("currentPlayerScore");
   let currentQuestion = allQuestions[index];
   let score = 0;
   if (selectedOption === currentQuestion.correctAnswer) {
@@ -189,17 +188,22 @@ function showAnswer(selectedOption) {
       let current_score2 = score;
       currentPlayerScore.innerText = `${player2Name}:- Got ${current_score2}`;
     }
+    updatePlayersScore();
+
   } else {
     error2.innerText = `❌ Wrong Answer! Correct answer is: ${currentQuestion.correctAnswer}`;
   }
 
   nextQuestionBtn.disabled = false;
 }
+function updatePlayersScore() {
+  playersScore.innerText = `${player1Name} :- ${player1_score}    ${player2Name} :- ${player2_score}`;
+}
 
 nextQuestionBtn.addEventListener("click", function () {
   nextQuestionBtn.disabled = true;
-  currentPlayerScore.innerText = "";
   error2.innerText = "";
+  currentPlayerScore.innerText="";
   index++;
   questionCount++;
   if (currentTurn === player1Name) {
